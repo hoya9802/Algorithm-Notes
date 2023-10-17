@@ -20,3 +20,5 @@ def dfs(graph, v):
             dfs(graph, i)
 
 dfs(graph, 1)
+
+# 1 2 7 6 8 3 4 5
