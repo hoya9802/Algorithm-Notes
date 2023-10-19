@@ -1,4 +1,4 @@
-# Python Alogorithm
+# Python Algorithm
 ---
 
 ### DFS&BFS
