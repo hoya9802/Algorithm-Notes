@@ -26,4 +26,6 @@
 * [improved dijkstra](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/ShortestPath/improved_dijkstra.py)
 * [simple dijkstra](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/ShortestPath/simple_dijkstra.py)
 ### GRAPH THEORY
-
+* [disjoint_sets](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/GraphTheory/disjoint_sets.py)
+* [improved_disjoint_sets](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/GraphTheory/improved_disjoint_sets.py)
+* [cycle_discriminator](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/GraphTheory/cycle_discriminator.py)
