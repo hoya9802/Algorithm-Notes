@@ -29,3 +29,5 @@
 * [disjoint_sets](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/GraphTheory/disjoint_sets.py)
 * [improved_disjoint_sets(using path compression)](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/GraphTheory/improved_disjoint_sets.py)
 * [cycle_discriminator(using improved disjoint sets)](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/GraphTheory/cycle_discriminator.py)
+* [kruskal](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/GraphTheory/kruskal.py)
+* [topology](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/GraphTheory/topology.py)
