@@ -11,12 +11,12 @@
 ### GREEDY
 * [Until 1](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/이코테/Greedy/until_1.py)
 ### SORT
-* [count sort](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/이코테/SORT/count_sort.py)
-* [insert sort](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/이코테/SORT/insert_sort.py)
-* [quick sort](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/이코테/SORT/quick_sort.py)
-* [quick sort(Using python advantage)](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/이코테/SORT/quick_sort_using_python_advantage.py)
-* [selection sort](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/이코테/SORT/selection_sort.py)
-* [sort function of python](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/이코테/SORT/sort_built_in_func.py)
+* [count sort](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/%EC%9D%B4%EC%BD%94%ED%85%8C/Sort/count_sort.py)
+* [insert sort](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/%EC%9D%B4%EC%BD%94%ED%85%8C/Sort/insert_sort.py)
+* [quick sort](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/%EC%9D%B4%EC%BD%94%ED%85%8C/Sort/quick_sort.py)
+* [quick sort(Using python advantage)](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/%EC%9D%B4%EC%BD%94%ED%85%8C/Sort/quick_sort_using_python_advantage.py)
+* [selection sort](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/%EC%9D%B4%EC%BD%94%ED%85%8C/Sort/selection_sort.py)
+* [sort function of python](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/%EC%9D%B4%EC%BD%94%ED%85%8C/Sort/sort_built_in_func.py)
 ### SEARCH
 * [binary search(Using Iteration)](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/이코테/Search/binary_search_using_iteration.py)
 * [binary search(Using Recursive)](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/이코테/Search/binary_search_using_recursive.py)
