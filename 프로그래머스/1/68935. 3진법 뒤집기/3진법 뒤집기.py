@@ -10,11 +10,11 @@ def solution(n):
     return answer
 
 # best solution
-def solution(n):
-    tmp = ''
-    while n:
-        tmp += str(n % 3)
-        n = n // 3
+# def solution(n):
+#     tmp = ''
+#     while n:
+#         tmp += str(n % 3)
+#         n = n // 3
 
-    answer = int(tmp, 3)
-    return answer
+#     answer = int(tmp, 3) # int(num, 3) -> 3진법인 str형태의 tmp을 10진법으로 변경
+#     return answer
