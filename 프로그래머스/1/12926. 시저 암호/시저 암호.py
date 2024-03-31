@@ -1,4 +1,5 @@
-# z:122, Z:90 A:65 a:97
+# # # A:65 Z:90 | a:97 z:122
+# # my solution
 def solution(s, n):
     answer = ''
     for i in s:
@@ -15,3 +16,15 @@ def solution(s, n):
         else:
             answer += chr(sn)
     return answer
+
+# best solution
+def solution(s, n):
+    s = list(s)
+    print(s)
+    for i in range(len(s)):
+        if s[i].isupper():
+            s[i]=chr((ord(s[i])-ord('A')+ n)%26+ord('A'))
+        elif s[i].islower():
+            s[i]=chr((ord(s[i])-ord('a')+ n)%26+ord('a'))
+
+    return "".join(s)

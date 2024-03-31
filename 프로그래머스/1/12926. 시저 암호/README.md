@@ -1,10 +1,10 @@
 # [level 1] 시저 암호 - 12926 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12926) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12926?language=python3) 
 
 ### 성능 요약
 
-메모리: 10.3 MB, 시간: 2.23 ms
+메모리: 10.4 MB, 시간: 2.68 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 03월 31일 16:44:57
+2024년 03월 31일 16:55:11
 
 ### 문제 설명
 
