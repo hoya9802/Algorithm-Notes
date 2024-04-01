@@ -2,7 +2,7 @@ def solution(N, stages):
     answer = []
     for n in range(1, N+1):
         n_stage = stages.count(n)
-        if n_stage != 0:
+        if len(stages) != 0:
             answer.append(n_stage/len(stages))
         else:
             answer.append(0)
