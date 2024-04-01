@@ -5,11 +5,6 @@ def solution(s, skip, index):
         alphabets = alphabets.replace(sk,'')
 
     for w in s:
-        temp = alphabets.index(w) + (index % len(alphabets))
-        if temp > len(alphabets)-1:
-            temp = temp - len(alphabets)
-            answer += alphabets[temp]
-            continue
-        answer += alphabets[temp]
-            
+        answer += alphabets[(alphabets.index(w)+index) % len(alphabets)]
+           
     return answer
