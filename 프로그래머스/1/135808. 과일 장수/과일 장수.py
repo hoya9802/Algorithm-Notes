@@ -1,3 +1,4 @@
+# 2solved
 def solution(k, m, score):
     answer = 0
     score.sort(reverse=True)
