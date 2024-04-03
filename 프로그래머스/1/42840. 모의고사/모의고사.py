@@ -6,10 +6,9 @@ def solution(answers):
         for x, y in zip(math_idiot[n] * (ans_len//len(math_idiot[n])) + math_idiot[n][:ans_len%len(math_idiot[n])], answers):
             if x == y:
                 answer[n-1] += 1
-    mx_val = max(answer)
     res = []
     for idx, i in enumerate(answer):
-        if i == mx_val:
+        if i == max(answer):
             res.append(idx+1)
 
     return res
