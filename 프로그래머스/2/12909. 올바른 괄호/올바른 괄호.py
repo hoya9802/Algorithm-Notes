@@ -11,8 +11,5 @@ def solution(s):
                 return False
     if len(stack) > 0:
         return False
-    return True
-            
     
-
     return True
