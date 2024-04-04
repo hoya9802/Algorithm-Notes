@@ -8,4 +8,4 @@ def solution(n):
             break
         i += 1
     
-    return int(answer,2)
+    return n+i
