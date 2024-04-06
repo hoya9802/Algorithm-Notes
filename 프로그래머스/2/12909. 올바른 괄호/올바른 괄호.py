@@ -1,6 +1,8 @@
+# solve 2
 from collections import deque
 
 def solution(s):
+    answer = True
     stack = deque()
     for i in s:
         if i == '(':
@@ -10,5 +12,4 @@ def solution(s):
                 return False
     if len(stack) != 0:
         return False
-
     return True
