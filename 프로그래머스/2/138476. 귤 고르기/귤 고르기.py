@@ -1,13 +1,13 @@
 from collections import Counter
 
 def solution(k, tangerine):
-    lst = list()
+    cnt = 0
     tg_dict = Counter(tangerine)
-    tg_val = sorted(tg_dict.values(), reverse = True)
-    tg_key = sorted(tg_dict.keys(), reverse = True)
     
-    for i in range(len(tg_val)):
-        for j in range(tg_val[i]):
-            lst.append(tg_key[i])
+    for i in sorted(tg_dict.values(), reverse=True):
+        k -= i
+        cnt += 1
+        if k <= 0:
+            break
 
-    return len(set(lst[:k]))
+    return cnt
