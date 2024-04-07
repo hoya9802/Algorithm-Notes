@@ -12,5 +12,3 @@ def solution(n,a,b):
         else:
             a //= 2; b //= 2
         i += 1
-    
-    return 
