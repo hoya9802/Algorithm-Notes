@@ -19,11 +19,10 @@ def find_lcm(x, y):
     return ans
         
 def solution(arr):
-    stack = deque()
+    ans = arr[0]
     
-    for i in range(len(arr)):
-        stack.append(arr[i])
-        if len(stack) == 2:
-            stack.append(find_lcm(stack[0], stack[1]))
-            stack.popleft(); stack.popleft()
-    return stack[0]
+    for i in arr[1:]:
+        t = find_lcm(ans, i)
+        ans = t
+    
+    return ans
