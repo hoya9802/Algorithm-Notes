@@ -34,3 +34,4 @@
 ### Other Syntex
 * [remove_all](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/%EC%9D%B4%EC%BD%94%ED%85%8C/Other_syntax/remove_all.py)
 * [list rotation](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/%EC%9D%B4%EC%BD%94%ED%85%8C/Other_syntax/rotated_matrix.py)
+* [GCD&LCM](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/%EC%9D%B4%EC%BD%94%ED%85%8C/Other_syntax/GCD_LCM.py)
