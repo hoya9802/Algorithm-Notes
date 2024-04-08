@@ -1,12 +1,11 @@
 def solution(elements):
-    answer = 0
-    numberSet = set() 
+    answer = set()
     
-    elementLen = len(elements)
-    elements = elements * 2
+    for i in range(len(elements)):
+        tmp = elements[i]
+        answer.add(tmp)
+        for j in range(i+1, i+len(elements)):
+            tmp += elements[j%len(elements)]
+            answer.add(tmp)
     
-    for i in range(elementLen) : 
-        for j in range(elementLen) : 
-            numberSet.add(sum(elements[j:j+i+1]))
-    answer = len(numberSet)
-    return answer
+    return len(answer)
