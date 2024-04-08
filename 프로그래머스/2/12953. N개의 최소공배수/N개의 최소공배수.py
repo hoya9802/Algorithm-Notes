@@ -1,14 +1,13 @@
-def find_lcm(x, y):
-    if y == 0:
-        return x
+def gcd(n, m):
+    if m == 0:
+        return n
     else:
-        return find_lcm(y, x%y)
-        
+        return gcd(m, n%m)
+
 def solution(arr):
-    ans = arr[0]
-    
-    for i in arr[1:]:
-        t = ans * i // find_lcm(ans, i)
-        ans = t
-    
-    return ans
+    tmp = arr[0]
+    for i in arr:
+        t = tmp * i // gcd(tmp, i)
+        tmp = t
+        
+    return tmp
