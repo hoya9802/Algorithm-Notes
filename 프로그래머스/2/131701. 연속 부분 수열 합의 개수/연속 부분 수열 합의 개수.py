@@ -1,11 +1,11 @@
+# solve 1
 def solution(elements):
-    answer = set()
-    
+    ans = set()
     for i in range(len(elements)):
         tmp = elements[i]
-        answer.add(tmp)
+        ans.add(tmp)
         for j in range(i+1, i+len(elements)):
             tmp += elements[j%len(elements)]
-            answer.add(tmp)
+            ans.add(tmp)
     
-    return len(answer)
+    return len(ans)
