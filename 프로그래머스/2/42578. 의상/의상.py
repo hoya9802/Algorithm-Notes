@@ -1,13 +1,11 @@
+# solve 1
+from collections import Counter
+
 def solution(clothes):
-    ans=1
-    clodict = {}
-    for i in clothes:
-        clodict[i[-1]]=0
+    ans = 1
+    clo = Counter([n for x, n in clothes])
     
-    for k in clothes:
-        clodict[k[-1]]+=1
-        
-    for h in clodict.values():
-        ans=(h+1)*ans
-        
-    return ans-1
+    for i in clo.values():
+        ans = (i+1)*ans
+    
+    return ans - 1
