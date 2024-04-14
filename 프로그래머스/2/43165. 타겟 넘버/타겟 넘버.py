@@ -7,7 +7,8 @@ def dfs(i, total, numbers, target):
         return
     dfs(i+1, total+numbers[i], numbers, target)
     dfs(i+1, total-numbers[i], numbers, target)
-
+    
 def solution(numbers, target):
+    global answer
     dfs(0, 0, numbers, target)
     return answer
