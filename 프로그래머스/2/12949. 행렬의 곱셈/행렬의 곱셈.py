@@ -1,18 +1,18 @@
+# solve 1
+
 import numpy as np
 
+# def solution(arr1, arr2):
+#     res = np.matmul(arr1, arr2).tolist()
+#     return res
+
 def solution(arr1, arr2):
-    return np.matmul(arr1,arr2).tolist()
-
-def productMatrix(A, B):
-    answer = []
-
-    for i in range(len(A)):
-        arr = []
-        for j in range(len(B[0])):
+    res = [[0]*len(arr2[0]) for _ in range(len(arr1))]
+    for i in range(len(arr1)):
+        for j in range(len(arr2[0])):
             tmp = 0
-            for k in range(len(A[0])):
-                tmp += A[i][k] * B[k][j]
-            arr.append(tmp)
-        answer.append(arr)
-
-    return answer
+            for k in range(len(arr1[0])):
+                tmp += arr1[i][k] * arr2[k][j]
+            res[i][j] = tmp
+    print(res)
+    return res
