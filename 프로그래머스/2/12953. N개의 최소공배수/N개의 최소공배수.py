@@ -1,4 +1,4 @@
-# solve 5
+# solve 6
 
 def gcd(n, m):
     if m == 0:
@@ -10,4 +10,5 @@ def solution(arr):
     answer = arr[0]
     for i in arr:
         answer = answer * i // gcd(answer, i)
+    
     return answer
