@@ -1,9 +1,9 @@
-# solve 4
+# solve 5
 
 def solution(s):
     stack = []
     for i in s:
-        if i == "(":
+        if i == '(':
             stack.append(i)
         else:
             if len(stack) == 0 or stack.pop() != '(':
