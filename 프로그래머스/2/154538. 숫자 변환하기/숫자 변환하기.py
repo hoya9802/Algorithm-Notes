@@ -1,36 +1,38 @@
-# def solution(x, y, n):
-#     INF = int(1e9)
-#     answer = [INF] * (y+1)
-#     answer[x]=0
-#     for i in range(x+1, y+1):
-#         if answer[i-n] >= 0:
-#             answer[i] = min(answer[i], answer[i-n] + 1)
-#         if i % 2 == 0 and answer[i//2] >= 0:
-#             answer[i] = min(answer[i], answer[i//2] + 1)
-#         if i % 3 == 0 and answer[i//3] >= 0:
-#             answer[i] = min(answer[i], answer[i//3] + 1)
-#     if answer[-1] == INF:
-#         return -1
-#     return answer[-1]
-
+# DP
 def solution(x, y, n):
-    answer = 0
-    s = set()
-    s.add(x)
+    INF = int(1e9)
+    answer = [INF] * (y+1)
+    answer[x]=0
+    for i in range(x+1, y+1):
+        if answer[i-n] >= 0:
+            answer[i] = min(answer[i], answer[i-n] + 1)
+        if i % 2 == 0 and answer[i//2] >= 0:
+            answer[i] = min(answer[i], answer[i//2] + 1)
+        if i % 3 == 0 and answer[i//3] >= 0:
+            answer[i] = min(answer[i], answer[i//3] + 1)
+    if answer[-1] == INF:
+        return -1
+    return answer[-1]
 
-    while s:
-        if y in s:
-            return answer
+# bfs
+def solution(x, y, n):
+    answer = set()
+    answer.add(x)
+    ans = 0
+    while answer:
+        if y in answer:
+            return ans
+        
+        tmp = set()
+        for i in answer:
+            if i + n <= y:
+                tmp.add(i+n)
+            if i * 2 <= y:
+                tmp.add(2*i)
+            if i * 3 <= y:
+                tmp.add(3*i)
+        answer = tmp
+        ans += 1
 
-        nxt = set()
-        for i in s:
-            if i+n <= y:
-                nxt.add(i+n)
-            if i*2 <= y:
-                nxt.add(i*2)
-            if i*3 <= y:
-                nxt.add(i*3)
-        s = nxt
-        answer+=1
-
+    
     return -1
