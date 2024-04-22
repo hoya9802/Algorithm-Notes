@@ -1,14 +1,21 @@
 import math
 from itertools import permutations as pm
 
-def find_prime(x):
-    if x == 1 or x == 0:
-        return False
-    else:
-        for i in range(2, int(math.sqrt(x))+1):
-            if x % i == 0:
-                return False
-        return True
+def check_prime(x):
+    ans = 0
+    n = max(x)
+    check = [True] * (n+1)
+    check[0], check[1] = False, False
+    for i in range(2, int(math.sqrt(n))+1):
+        if check[i] == True:
+            j = 2
+            while i * j <= n:
+                check[i*j] = False
+                j += 1
+    for i in x:
+        if check[i] == True:
+            ans += 1
+    return ans
 
 def solution(numbers):
     res = set(); ans = 0
@@ -16,7 +23,5 @@ def solution(numbers):
         for j in list(pm(numbers,i+1)):
             tmp = ''.join(j)
             res.add(int(tmp))
-    for i in res:
-        if find_prime(i) == True:
-            ans += 1
+    ans = check_prime(res)
     return ans
