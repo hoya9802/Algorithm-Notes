@@ -1,4 +1,4 @@
-# solve 5
+# solve 6
 
 def solution(s):
     stack = []
