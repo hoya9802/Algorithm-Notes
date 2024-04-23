@@ -1,15 +1,13 @@
 from itertools import chain
 
-DIRS = {0: (1, 0), 1: (0, 1), 2: (-1, -1)}
-
 def solution(n):
-    triangle_slug = [[0] * i for i in range(1, n+1)]
-    r, c, num = -1, 0, 1
+    answer = [[0] * (i+1) for i in range(n)]
+    movements = [(1,0), (0,1), (-1,-1)]
+    x, y, p = -1, 0, 1
     for i in range(n):
-        for _ in range(i, n):
-            dir_r, dir_c = DIRS[i % 3]
-            r, c = r + dir_r, c + dir_c
-            triangle_slug[r][c] = num
-            num += 1
-    
-    return list(chain(*triangle_slug))
+        for _ in range(i,n):
+            dx, dy = movements[i%3]
+            x = x + dx; y = y + dy
+            answer[x][y] = p
+            p += 1
+    return list(chain(*answer))
