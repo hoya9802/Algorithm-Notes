@@ -8,7 +8,6 @@
 ### DYNAMIC PROGRAMMING
 * [fibo(bottomup)](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/DynamicProgramming/fibo_bottomtop.py)
 * [fibo(topdown)](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/DynamicProgramming/fibo_topdown.py)
-* [Hanoi Top](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/DynamicProgramming/hanoi.py)
 ### GREEDY
 * [Until 1](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Greedy/until_1.py)
 ### SORT
@@ -36,3 +35,4 @@
 * [remove_all](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/%EC%9D%B4%EC%BD%94%ED%85%8C/Other_syntax/remove_all.py)
 * [list rotation](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/%EC%9D%B4%EC%BD%94%ED%85%8C/Other_syntax/rotated_matrix.py)
 * [GCD&LCM](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/%EC%9D%B4%EC%BD%94%ED%85%8C/Other_syntax/GCD_LCM.py)
+* [Hanoi Top](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Other_syntax/hanoi.py)
