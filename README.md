@@ -36,3 +36,6 @@
 * [list rotation](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/AlgorithmC/Other_syntax/rotated_matrix.py)
 * [GCD&LCM](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Other_syntax/GCD_LCM.py)
 * [Hanoi Top](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Other_syntax/hanoi.py)
+* [Prime Number](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Other_syntax/prime_number.py)
+* [Eratosthenes_Sieve](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Other_syntax/Eratosthenes_sieve.py)
+* [Two Point](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Other_syntax/two_point.py)
