@@ -11,12 +11,12 @@
 ### GREEDY
 * [Until 1](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Greedy/until_1.py)
 ### SORT
-* [count sort](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/%EC%9D%B4%EC%BD%94%ED%85%8C/Sort/count_sort.py)
-* [insert sort](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/%EC%9D%B4%EC%BD%94%ED%85%8C/Sort/insert_sort.py)
-* [quick sort](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/%EC%9D%B4%EC%BD%94%ED%85%8C/Sort/quick_sort.py)
-* [quick sort(Using python advantage)](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/%EC%9D%B4%EC%BD%94%ED%85%8C/Sort/quick_sort_using_python_advantage.py)
-* [selection sort](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/%EC%9D%B4%EC%BD%94%ED%85%8C/Sort/selection_sort.py)
-* [sort function of python](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/%EC%9D%B4%EC%BD%94%ED%85%8C/Sort/sort_built_in_func.py)
+* [count sort](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Sort/count_sort.py)
+* [insert sort](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Sort/insert_sort.py)
+* [quick sort](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Sort/quick_sort.py)
+* [quick sort(Using python advantage)](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Sort/quick_sort_using_python_advantage.py)
+* [selection sort](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Sort/selection_sort.py)
+* [sort function of python](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Sort/sort_built_in_func.py)
 ### SEARCH
 * [binary search(Using Iteration)](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Search/binary_search_using_iteration.py)
 * [binary search(Using Recursive)](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Search/binary_search_using_recursive.py)
@@ -32,7 +32,7 @@
 * [kruskal](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/GraphTheory/kruskal.py)
 * [topology](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/GraphTheory/topology.py)
 ### Other Syntex
-* [remove_all](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/%EC%9D%B4%EC%BD%94%ED%85%8C/Other_syntax/remove_all.py)
-* [list rotation](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/%EC%9D%B4%EC%BD%94%ED%85%8C/Other_syntax/rotated_matrix.py)
-* [GCD&LCM](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/%EC%9D%B4%EC%BD%94%ED%85%8C/Other_syntax/GCD_LCM.py)
+* [remove_all](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Other_syntax/remove_all.py)
+* [list rotation](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/AlgorithmC/Other_syntax/rotated_matrix.py)
+* [GCD&LCM](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Other_syntax/GCD_LCM.py)
 * [Hanoi Top](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Other_syntax/hanoi.py)
