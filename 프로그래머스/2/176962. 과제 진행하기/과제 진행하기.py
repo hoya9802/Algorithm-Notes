@@ -1,18 +1,13 @@
 def solution(plans):
-    lst = []
-    for i in plans:
-        a, b, c = i
-        h,m = map(int, b.split(":"))
-        b = h*60+m; c = int(c)
-        lst.append([a, b, c])
-    lst.sort(key=lambda x: -x[1])
+    plans = sorted(map(lambda x: [x[0], int(x[1][:2]) * 60 + int(x[1][3:]), int(x[2])], plans), key=lambda x: -x[1])
 
-    res = []
-    while lst:
-        x = lst.pop()
-        for idx, val in enumerate(res):
-            if val[0] > x[1]:
-                res[idx][0] += x[2]
-        res.append([x[1]+x[2], x[0]])
-    res.sort(key=lambda x: x[0])
-    return [x[1] for x in res]
+    lst = []
+    while plans:
+        x = plans.pop()
+        for i, v in enumerate(lst):
+            if v[0] > x[1]:
+                lst[i][0] += x[2]
+        lst.append([x[1] + x[2], x[0]])
+    lst.sort()
+
+    return list(map(lambda x: x[1], lst))
