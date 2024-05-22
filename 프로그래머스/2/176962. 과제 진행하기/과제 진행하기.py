@@ -1,33 +1,18 @@
-def time_change(x):
-    h, m = map(int, x.split(':'))
-    return h * 60 + m
-
 def solution(plans):
-    ans = []
-    plans.sort(key=lambda x: x[1])
-    stack = []
-    for i in range(len(plans)):
-        left_time = 0
-        sb, time, use = plans[i]
-        if i + 1 >= len(plans):
-            ans.append(sb)
-            break
-        if time_change(time) + int(use) > time_change(plans[i+1][1]):
-            stack.append([sb, time_change(time)+int(use) - time_change(plans[i+1][1])])
-        elif time_change(time) + int(use) <= time_change(plans[i+1][1]):
-            left_time = time_change(plans[i+1][1]) - (time_change(time) + int(use))
-            ans.append(sb)
-            if left_time > 0:
-                while stack and left_time > 0:
-                    temp_sub, temp_time = stack.pop()
-                    if temp_time <= left_time:
-                        ans.append(temp_sub)
-                        left_time -= temp_time
-                    else:
-                        temp_time -= left_time
-                        stack.append([temp_sub, temp_time])
-                        break
-    while stack:
-        temp_sub, temp_time = stack.pop()
-        ans.append(temp_sub)
-    return ans
+    lst = []
+    for i in plans:
+        a, b, c = i
+        h,m = map(int, b.split(":"))
+        b = h*60+m; c = int(c)
+        lst.append([a, b, c])
+    lst.sort(key=lambda x: -x[1])
+
+    res = []
+    while lst:
+        x = lst.pop()
+        for idx, val in enumerate(res):
+            if val[0] > x[1]:
+                res[idx][0] += x[2]
+        res.append([x[1]+x[2], x[0]])
+    res.sort(key=lambda x: x[0])
+    return [x[1] for x in res]
