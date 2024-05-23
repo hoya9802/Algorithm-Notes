@@ -5,6 +5,8 @@
 * [BFS(Using Iteration)](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/DFS%26BFS/bfs.py)
 * [DFS(Using Iteration)](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/DFS%26BFS/dfs_using_iteration.py)
 * [DFS(Using Recursive)](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/DFS%26BFS/dfs_using_recursive.py)
+### Back Tracking
+* [N Queen](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Backtracking/N_Queen.py)
 ### DYNAMIC PROGRAMMING
 * [fibo(bottomup)](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/DynamicProgramming/fibo_bottomtop.py)
 * [fibo(topdown)](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/DynamicProgramming/fibo_topdown.py)
