@@ -1,4 +1,4 @@
-# solve 6
+# solve 12
 
 def solution(s):
     stack = []
@@ -8,6 +8,6 @@ def solution(s):
         else:
             if len(stack) == 0 or stack.pop() != '(':
                 return False
-    if len(stack) != 0:
+    if stack:
         return False
     return True
