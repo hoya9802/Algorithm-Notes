@@ -1,4 +1,4 @@
-# solve 1
+# sovle 2
 
 def solution(n):
     global ans
