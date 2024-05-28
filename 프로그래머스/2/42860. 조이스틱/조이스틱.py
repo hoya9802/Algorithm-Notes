@@ -18,7 +18,7 @@ def solution(name):
         # 1. 이전 커서 이동 값 ( 초기값 - 이름의 길이 - 1 )
         # 2. 연속된 A의 왼쪽 시작
         # 3. 연속된 A의 오른쪽 시작
-        temp = [ cursor_move, 2 * i + len(name) - next, i + 2 * (len(name) - next) ]
+        temp = [cursor_move, 2 * i + len(name) - next, i + 2 * (len(name) - next)]
 
         cursor_move = min(temp)    
         
