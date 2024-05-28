@@ -1,10 +1,13 @@
+# solve 1
+
 def solution(targets):
-    ans = 0; bound = 0
-    for target in sorted(targets):
+    targets.sort()
+    res = bound = 0
+    for target in targets:
         s, e = target
         if bound > s:
             bound = min(bound, e)
-        else:
-            bound = e
-            ans += 1
-    return ans
+            continue
+        bound = e
+        res += 1
+    return res
