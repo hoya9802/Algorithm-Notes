@@ -1,5 +1,3 @@
-import copy
-
 def rotate_90(lst):
     res = [[0] * len(lst[0]) for _ in range(len(lst))]
     for i in range(len(lst)):
