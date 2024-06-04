@@ -9,9 +9,6 @@ def gcd(n, m):
         return n
     else: 
         return gcd(m, n%m)
-fd = gcd(fs, fm); sd = gcd(ss, sm)
-fs //= fd; fm //= fd
-ss //= sd; sm //= sd
 
 lcm = fm * sm // gcd(fm, sm)
 top = (fs * lcm//fm) + (ss * lcm//sm)
