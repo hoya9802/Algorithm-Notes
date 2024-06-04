@@ -1,14 +1,14 @@
 import sys
 input = sys.stdin.readline
 
-x = int(input())
+n = int(input())
 line = 1
-while x > line:
-    x -= line
+while n > line:
+    n -= line
     line += 1
 if line % 2 == 0:
-    t = x; b = line -(x-1)
-else:
-    t = line-(x-1)
-    b = x
-print(f'{t}/{b}')
+    m = line - (n-1); b = n
+if line % 2 != 0:
+    m =n; b = line - (n-1)
+
+print(f'{b}/{m}')
