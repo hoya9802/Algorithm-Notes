@@ -1,3 +1,11 @@
+# 7 7
+# 2 0 0 0 1 1 0
+# 0 0 1 0 1 2 0
+# 0 1 1 0 1 0 0
+# 0 1 0 0 0 0 0
+# 0 0 0 0 0 1 1
+# 0 1 0 0 0 0 0
+# 0 1 0 0 0 0 0
 import sys, copy
 from collections import deque
 from itertools import combinations as cb
@@ -39,9 +47,7 @@ for i in range(len(pos_bar)):
         x, y = v
         bfs(c_graph, x, y)
     for j in range(n):
-        for k in range(m):
-            if c_graph[j][k] == 0:
-                temp += 1
+        temp += c_graph[j].count(0)
     if temp > max_val:
         max_val = temp
 print(max_val)
