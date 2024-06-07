@@ -16,7 +16,6 @@ def turn_left():
 res = 1
 clean[x][y] = 1
 while 1:
-    time = 0
     for _ in range(4):
         turn_left()
         nx = x + movement[d][0]; ny = y + movement[d][1]
@@ -25,10 +24,7 @@ while 1:
             res += 1
             x, y = nx, ny
             break
-        else:
-            time += 1
-
-    if time == 4:
+    else:
         nx = x - movement[d][0]; ny = y - movement[d][1]
         if graph[nx][ny] == 1:
             break
