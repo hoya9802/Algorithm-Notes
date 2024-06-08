@@ -4,10 +4,13 @@ input = sys.stdin.readline
 N, M = map(int, input().split())
 graph = [list(map(int, input().split())) for _ in range(N)]
 visited = [[0] * M for _ in range(N)]
+mx = max(map(max, graph))
 
 ans = 0
 def dfs(n, sm, tlist):
     global ans
+    if sm + (4-n)*mx <= ans:
+        return 
     if n == 4:
         ans = max(ans, sm)
         return
