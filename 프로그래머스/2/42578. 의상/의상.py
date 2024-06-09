@@ -1,9 +1,11 @@
-# solve 4
+# solve 6
 from collections import Counter
 
 def solution(clothes):
-    answer = 1
-    cnt = Counter([x for n, x in clothes])
-    for i in cnt.values():
-        answer *= (i + 1)
-    return answer - 1
+    ans = 1
+    cc = Counter([k for x, k in clothes])
+    for i in cc.values():
+        ans *= (i+1)
+    return ans-1
+    
+    
