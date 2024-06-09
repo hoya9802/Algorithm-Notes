@@ -1,23 +1,33 @@
 def solution(s):
-    cnt = 0
-    house = {'(':')', '{':'}', '[':']'}
-    
+    res = 0
+    s = list(s)
     for _ in range(len(s)):
-        stack = []
-        for x in s:
-            if x in house.keys():
-                stack.append(x)
-            elif x in house.values():
-                if len(stack) == 0:
+        s.append(s.pop(0))
+        stack = []; flag = True
+        for i in s:
+            if i == '(' or i == '{' or i == '[':
+                stack.append(i)
+            else:
+                if not stack:
+                    flag = False
                     break
-                elif house[stack[-1]] == x:
-                    stack.pop()
-                else:
-                    break
-        else:
-            if len(stack) == 0:
-                cnt += 1
-                
-        s = s[1:] + s[0]
-                
-    return cnt
+                check = stack[-1]
+                if i == ")":
+                    if stack.pop() != '(':
+                        flag = False
+                        break
+                if i == "}":
+                    if stack.pop() != '{':
+                        flag = False
+                        break
+                if i == ']':
+                    if stack.pop() != '[':
+                        flag = False
+                        break
+        if stack:
+            flag = False
+        if flag == True:
+            res += 1
+    return res
+    
+                    
