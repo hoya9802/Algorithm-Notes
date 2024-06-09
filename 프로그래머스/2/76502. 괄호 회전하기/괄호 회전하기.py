@@ -1,3 +1,5 @@
+# solve 1
+
 def solution(s):
     res = 0
     s = list(s)
