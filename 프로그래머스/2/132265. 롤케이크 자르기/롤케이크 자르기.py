@@ -1,15 +1,14 @@
 from collections import Counter
 
 def solution(topping):
-    ans = 0
+    tc = Counter(topping)
     forward = set()
-    backward = Counter(topping)
-
-    for i in topping:
-        forward.add(i)
-        backward[i] -= 1
-        if backward[i] == 0:
-            del backward[i]
-        if len(forward) == len(backward.keys()):
-            ans += 1
-    return ans
+    res = 0
+    for t in topping:
+        forward.add(t)
+        tc[t] -= 1
+        if tc[t] == 0:
+            del tc[t]
+        if len(forward) == len(tc):
+            res += 1
+    return res
