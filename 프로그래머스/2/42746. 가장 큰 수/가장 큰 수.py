@@ -1,8 +1,8 @@
-# solve 1
+# solve 5
 from functools import cmp_to_key
 
 def compare(x, y):
-    if x + y >= y + x:
+    if x+y >= y+x:
         return -1
     else:
         return 1
@@ -10,8 +10,8 @@ def compare(x, y):
 def solution(numbers):
     numbers = list(map(str, numbers))
     numbers.sort(key=cmp_to_key(compare))
-    res = ''.join(numbers)
-    if res == '0' * len(res):
+    if numbers == ['0']*len(numbers):
         return '0'
     else:
-        return res
+        return ''.join(numbers)
+    
