@@ -1,11 +1,13 @@
+from collections import deque
+
 def solution(order):
-    answer, st, cur = 0, [], 0
-
-    for i in range(1, len(order) + 1):
-        st.append(i)
-        while st and st[-1] == order[cur]:
-            st.pop()
-            cur += 1
-            answer += 1
-
-    return answer
+    mainc = [x for x in range(1,len(order)+1)]
+    stack = []
+    res = 0
+    order = deque(order)
+    for mc in mainc:
+        stack.append(mc)
+        while stack and stack[-1] == order[0]:
+            stack.pop(); order.popleft()
+            res += 1
+    return res
