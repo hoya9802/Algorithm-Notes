@@ -1,9 +1,13 @@
+# solve 4
+
 def solution(number, k):
     stack = []
-    for num in number:
-        while stack and stack[-1] < num and k > 0:
+    for n in number:
+        while stack and stack[-1] < n and k > 0:
             stack.pop()
             k -= 1
-        stack.append(num)
-    
-    return ''.join(stack[:len(stack)-k])
+        stack.append(n)
+    while stack and k > 0:
+        stack.pop()
+        k -= 1
+    return ''.join(stack)
