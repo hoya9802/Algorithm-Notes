@@ -1,13 +1,12 @@
 from itertools import chain
 
 def solution(n):
-    answer = [[0] * (i+1) for i in range(n)]
-    movements = [(1,0), (0,1), (-1,-1)]
-    x, y, p = -1, 0, 1
+    movement = [(1,0), (0,1), (-1,-1)]
+    graph = [[0] * n for n in range(1,n+1)]
+    x, y = -1, 0; f = 1
     for i in range(n):
-        for _ in range(i,n):
-            dx, dy = movements[i%3]
-            x = x + dx; y = y + dy
-            answer[x][y] = p
-            p += 1
-    return list(chain(*answer))
+        for j in range(i, n):
+            x += movement[i%3][0]; y += movement[i%3][1]
+            graph[x][y] = f
+            f += 1
+    return list(chain(*graph))
