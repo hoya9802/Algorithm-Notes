@@ -1,4 +1,3 @@
-# solve 7
 import heapq
 
 def solution(N, road, K):
