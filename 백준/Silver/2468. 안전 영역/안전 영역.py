@@ -1,5 +1,5 @@
 import sys
-sys.setrecursionlimit(10 ** 5)
+sys.setrecursionlimit(10**5)
 input = sys.stdin.readline
 
 n = int(input())
@@ -24,7 +24,8 @@ for l in range(max_val):
     cnt = 0
     for i in range(n):
         for j in range(n):
-            cnt += dfs(i,j,l,visited)
+            if not visited[i][j] or graph[i][j] <= l:
+                cnt += dfs(i,j,l,visited)
     if cnt > res:
         res = cnt
 print(res)
