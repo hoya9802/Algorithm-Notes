@@ -1,10 +1,16 @@
 import sys
-from itertools import permutations as pm
 input = sys.stdin.readline
 
 n, m = map(int, input().split())
 
-for i in list(pm(range(1,n+1),m)):
-    for j in i:
-        print(j, end=" ")
-    print()
+lst = []
+def dfs():
+    if len(lst) == m:
+        print(' '.join(map(str, lst)))
+        return
+    for i in range(1,n+1):
+        if i not in lst:
+            lst.append(i)
+            dfs()
+            lst.pop()
+dfs()
