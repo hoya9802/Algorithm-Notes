@@ -9,8 +9,6 @@ def cal(x, y):
     for i in range(len(x)):
         for j in range(i+1,len(x)):
             x_val += (graph[x[i]][x[j]] + graph[x[j]][x[i]])
-    for i in range(len(y)):
-        for j in range(i+1,len(y)):
             y_val += (graph[y[i]][y[j]] + graph[y[j]][y[i]])
     return abs(x_val - y_val)
 
