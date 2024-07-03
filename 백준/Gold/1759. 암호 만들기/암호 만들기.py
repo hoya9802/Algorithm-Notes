@@ -14,6 +14,8 @@ def check(x):
     return False
 
 def dfs(n, s):
+    if len(s) > L:
+        return
     if n == C:
         if check(s) and len(s) == L:
             print(''.join(s))
