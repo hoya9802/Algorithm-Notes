@@ -20,8 +20,9 @@ class MutableTuple:
             print('Try to use change() function instead')
 
 c = MutableTuple(1,2,3)
-print(c)
-c.change(1,100)
-print(c[1])
-c[1] = 1
-print(c)
+
+print(c)        # (1, 2, 3)
+c.change(1,100) # 인덱스 1번을 100으로 변경
+print(c[1])     # 100
+c[1] = 1        # Try to use change() function instead
+print(c)        # (1, 100, 3)
