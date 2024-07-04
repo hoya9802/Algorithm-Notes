@@ -13,6 +13,14 @@ class str_:
     def __str__(self):
         return self.s
     
+    def __len__(self):
+        return len(self.s)
+    
+    def count(self, val):
+        return self.s.count(val)
+    
 a = str_('안녕')
 a[0] = '원'
-print(a)         # 원녕
+print(a)                # 원녕
+print(len(a))           # 2
+print(a.count('녕'))    # 1
