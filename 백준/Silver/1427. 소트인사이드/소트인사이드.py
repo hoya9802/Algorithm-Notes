@@ -1,9 +1,12 @@
 import sys
 input = sys.stdin.readline
 
-n = str(input().rstrip())
-lst = []
-for i in n:
-    lst.append(i)
-lst.sort(reverse=True)
-print(''.join(lst))
+class solution:
+    def __init__(self, y):
+        self.y = sorted([x for x in y], reverse=True)
+
+    def res(self):
+        return ''.join(self.y)
+
+a = solution(input().rstrip())
+print(a.res())
