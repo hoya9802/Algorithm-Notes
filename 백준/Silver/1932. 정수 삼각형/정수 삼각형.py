@@ -3,13 +3,14 @@ input = sys.stdin.readline
 
 n = int(input())
 graph = [list(map(int, input().split())) for _ in range(n)]
-dp  = [[0]*x for x in range(1,n+1)]
-dp[0][0] = graph[0][0]
 
-for i in range(0, n-1):
-    for j in range(len(graph[i])):
-        for k in [(1,0), (1,1)]:
-            temp = dp[i][j] + graph[i+k[0]][j+k[1]]
-            dp[i+k[0]][j+k[1]] = max(dp[i+k[0]][j+k[1]], temp)
+for i in range(1,n):
+    for j in range(i+1):
+        if j == 0:
+            graph[i][j] += graph[i-1][j]
+        elif j == i:
+            graph[i][j] += graph[i-1][j-1]
+        else:
+            graph[i][j] += max(graph[i-1][j-1], graph[i-1][j])
 
-print(max(dp[-1]))
+print(max(graph[-1]))
