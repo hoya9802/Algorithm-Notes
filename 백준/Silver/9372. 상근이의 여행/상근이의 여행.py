@@ -19,6 +19,7 @@ for _ in range(int(input())):
                 visited[now] = True
                 res += 1
                 for i in graph[now]:
-                    stack.append(i)
+                    if not visited[i]:
+                        stack.append(i)
     dfs(1)
     print(res-1)
