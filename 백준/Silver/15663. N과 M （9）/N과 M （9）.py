@@ -1,10 +1,9 @@
 import sys
-from collections import Counter
+from collections import deque
 input = sys.stdin.readline
 
 n, m = map(int, input().split())
-data = list(map(int, input().split()))
-dc = Counter(data)
+data = deque(list(map(int, input().split())))
 
 res = set()
 def dfs(s):
@@ -12,12 +11,11 @@ def dfs(s):
         res.add(tuple(s))
         return
     for i in range(len(data)):
-        if dc[data[i]] > 0:
-            dc[data[i]] -= 1
-            s.append(data[i])
-            dfs(s)
-            s.pop()
-            dc[data[i]] += 1
+        tmp = data.popleft()
+        s.append(tmp)
+        dfs(s)
+        s.pop()
+        data.append(tmp)
 
 dfs([])
 
