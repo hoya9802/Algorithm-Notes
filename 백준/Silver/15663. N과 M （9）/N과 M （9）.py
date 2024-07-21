@@ -3,7 +3,7 @@ from collections import Counter
 input = sys.stdin.readline
 
 n, m = map(int, input().split())
-data = sorted(list(map(int, input().split())))
+data = list(map(int, input().split()))
 dc = Counter(data)
 
 res = set()
