@@ -1,17 +1,25 @@
 import sys
 input = sys.stdin.readline
 
-n = int(input())
+def dfs(p, visited):
+    for q in arr[p]:
+        if not visited[q]:
+            visited[q] = 1
+            dfs(q, visited)
+    return
 
-graph = [list(map(int, input().split())) for  _ in range(n)]
+N = int(input())
+arr = [list() for i in range(N)]
 
-for k in range(n):
-    for s in range(n):
-        for e in range(n):
-            if graph[s][k] and graph[k][e]:
-                graph[s][e] = 1
+for i in range(N):
+    m = list(map(int, input().split()))
+    for j in range(N):
+        if m[j]: arr[i].append(j)
+ans = []
 
-for i in range(n):
-    for j in range(n):
-        print(graph[i][j], end= " ")
-    print()
+for i in range(N):
+    visited = [0] * N
+    dfs(i, visited)
+    ans.append(' '.join(list(map(str, visited))))
+
+print("\n".join(ans))
