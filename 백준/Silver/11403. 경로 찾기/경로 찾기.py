@@ -1,25 +1,23 @@
 import sys
 input = sys.stdin.readline
 
-def dfs(p, visited):
-    for q in arr[p]:
-        if not visited[q]:
-            visited[q] = 1
-            dfs(q, visited)
+def dfs(i, visited):
+    for x in graph[i]:
+        if not visited[x]:
+            visited[x] = 1
+            dfs(x, visited)
     return
 
-N = int(input())
-arr = [list() for i in range(N)]
+n = int(input())
+graph = [[] for _ in range(n)]
 
-for i in range(N):
-    m = list(map(int, input().split()))
-    for j in range(N):
-        if m[j]: arr[i].append(j)
-ans = []
+for i in range(n):
+    m = map(int, input().split())
+    for j in range(n):
+        x = next(m)
+        if x : graph[i].append(j)
 
-for i in range(N):
-    visited = [0] * N
+for i in range(n):
+    visited = [0] * n
     dfs(i, visited)
-    ans.append(' '.join(list(map(str, visited))))
-
-print("\n".join(ans))
+    print(' '.join(map(str, visited)))
