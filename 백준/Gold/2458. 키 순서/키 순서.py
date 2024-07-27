@@ -1,34 +1,35 @@
 import sys
 input = sys.stdin.readline
 
-INF = int(1e9)
+def dfs(x, n):
+    visited[x] = n
+    for i in graph[x]:
+        if visited[i] == -1:
+            dfs(i, n+1)
+    return
 
 n, m = map(int, input().split())
-graph = [[INF] * (n+1) for _ in range(n+1)]
 
+graph = [[] for _ in range(n+1)]
 for _ in range(m):
-    s, e = map(int, input().split())
-    graph[s][e] = 1
+    x, y = map(int, input().split())
+    graph[x].append(y)
 
-for i in range(n+1):
-    for j in range(n+1):
-        if i == j:
-            graph[i][j] = 0
+res = []
+for i in range(1,n+1):
+    visited = [-1] * (n+1)
+    dfs(i,0)
+    v = []
+    res.append(visited[1:])
 
-for k in range(1, n+1):
-    for s in range(1, n+1):
-        for e in range(1, n+1):
-            graph[s][e] = min(graph[s][e], graph[s][k] + graph[k][e])
-
-res = 0
-for i in range(1, n+1):
-    h = graph[i][1:]; v = []
-    for j in range(1, n+1):
-        v.append(graph[j][i])
+ans = 0
+for i in range(n):
+    h = res[i]; v = []
+    for j in range(n):
+        v.append(res[j][i])
     for x,y in zip(h,v):
-        if x + y >= INF * 2:
+        if x + y < 0:
             break
     else:
-        res += 1
-
-print(res)
+        ans += 1
+print(ans)
