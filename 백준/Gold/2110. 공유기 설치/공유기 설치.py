@@ -10,19 +10,18 @@ arr.sort()
 start = 1
 end = arr[-1] - arr[0]
 res = 0
-
 while start <= end:
     mid = (start + end) // 2
-    current_pos = arr[0]
+    current = arr[0]
     cnt = 1
     for i in range(1, n):
-        if arr[i] >= current_pos + mid:
-            current_pos = arr[i]
+        if arr[i] >= current + mid:
+            current = arr[i]
             cnt += 1
     if cnt >= c:
-        start = mid + 1
         res = mid
+        start = mid+1
     else:
-        end = mid - 1
+        end = mid-1
 
 print(res)
