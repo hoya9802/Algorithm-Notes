@@ -1,31 +1,38 @@
 import sys
+input = sys.stdin.readline
 
+n = int(input())
+graph = []
+for _ in range(n):
+    temp = list(map(int, input().split()))
+    graph.append(temp)
 
-def dfs(start, now, value, cnt):
-    global ans
-    if cnt == N:
-        if a[now][start]:
-            value += a[now][start]
-            if ans > value:
-                ans = value
+res = int(1e9)
+
+def dfs(cnt, sm, prev, start):
+    global res
+    if res < sm:
         return
 
-    if value > ans:
-        return
+    if cnt == n:
+        back_sm = graph[prev][start]
+        if back_sm == 0:
+            return
+        else:
+            if res > sm + back_sm:
+                res = sm + back_sm
+                return
+            
+    for i in range(n):
+        if not visited[i] and graph[prev][i]:
+            visited[i] = True
+            dfs(cnt+1, sm+graph[prev][i], i, start)
+            visited[i] = False
 
-    for i in range(N):
-        if not visited[i] and a[now][i]:
-            visited[i] = 1
-            dfs(start, i, value + a[now][i], cnt + 1)
-            visited[i] = 0
+visited = [False] * n
+for i in range(n):
+    visited[i] = True
+    dfs(1,0,i,i)
+    visited[i] = False
 
-
-N = int(input())
-a = [list(map(int, input().split()))for _ in range(N)]
-ans = sys.maxsize
-visited = [0] * N
-for i in range(N):
-    visited[i] = 1
-    dfs(i, i, 0, 1)
-    visited[i] = 0
-print(ans)
+print(res)
