@@ -1,0 +1,1 @@
+for res in [i[0]+i[-1] for i in [input().split()[0] for _ in range(int(input()))]]:print(res)
