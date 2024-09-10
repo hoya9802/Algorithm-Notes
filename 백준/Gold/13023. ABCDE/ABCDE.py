@@ -11,17 +11,15 @@ for _ in range(m):
 def dfs(lst):
     global res
     if len(lst) == 5:
-        res = 1
+        print(1)
+        exit()
         return
     
     for i in graph[lst[-1]]:
         if i not in lst:
             dfs(lst+[i])
 
-res = 0
 for i in range(n):
     dfs([i])
-    if res == 1:
-        break
 
-print(res)
+print(0)
