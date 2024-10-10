@@ -34,3 +34,8 @@ lst = list(map(int, input().split()))
 
 merge_sort(lst, 0, len(lst)-1)
 print(*lst)
+
+'''
+input: [4, 5, 1, 3, 2]
+ouput: [1, 2, 3, 4, 5]
+'''
