@@ -15,6 +15,7 @@
 ### SORT
 * [count sort](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Sort/count_sort.py)
 * [insert sort](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Sort/insert_sort.py)
+* [merge sort](https://github.com/hoya9802/Algorithm-Notes/blob/main/Algorithm/Sort/merge_sort.py)
 * [quick sort](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Sort/quick_sort.py)
 * [quick sort(Using python advantage)](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Sort/quick_sort_using_python_advantage.py)
 * [selection sort](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Sort/selection_sort.py)
