@@ -1,48 +1,43 @@
 import sys
 sys.setrecursionlimit(10**6)
+input = sys.stdin.readline
 
-def merge_sort(A, p, r):
-    if p < r:
-        q = (p + r) // 2
-        merge_sort(A, p, q)
-        merge_sort(A, q + 1, r)
-        merge(A, p, q, r)
+def merge_sort(lst, s, e):
+    if s < e:
+        mid = (s+e)//2
+        merge_sort(lst, s, mid)
+        merge_sort(lst, mid+1, e)
+        merge(lst,s,mid,e)
 
-def merge(A, p, q, r):
-    global cnt, ans
-    i = p
-    j = q + 1
-    tmp = []
-    
-    while i <= q and j <= r:
-        if A[i] <= A[j]:
-            tmp.append(A[i])
+def merge(lst, s, mid, e):
+    global ans, cnt
+    i = s; j = mid + 1; temp = []
+    while i <= mid and j <= e:
+        if lst[i] <= lst[j]:
+            temp.append(lst[i])
             i += 1
         else:
-            tmp.append(A[j])
+            temp.append(lst[j])
             j += 1
-    
-    while i <= q:
-        tmp.append(A[i])
+
+    while i <= mid:
+        temp.append(lst[i])
         i += 1
-    
-    while j <= r:
-        tmp.append(A[j])
+    while j <= e:
+        temp.append(lst[j])
         j += 1
-    
-    i = p
-    t = 0
-    while i <= r:
-        A[i] = tmp[t]
+
+    i = s; t = 0
+    while i < j:
+        lst[i] = temp[t]
         cnt += 1
         if cnt == k:
-            ans = A[i]
-        i += 1
-        t += 1
+            ans = lst[i]
+        i += 1; t += 1
 
 n, k = map(int, input().split())
-A = list(map(int, input().split()))
-cnt = 0
-ans = -1
-merge_sort(A, 0, n - 1)
+a = list(map(int, input().split()))
+
+cnt = 0; ans = -1
+merge_sort(a, 0, n-1)
 print(ans)
