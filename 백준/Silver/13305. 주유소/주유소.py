@@ -9,6 +9,11 @@ for i in range(1,n):
     if i == 1:
         dp[i] = l[0] * c[0]
         continue
-    dp[i] = min(dp[i-1]+(l[i-1]*c[i-2]), dp[i-1]+(l[i-1]*c[i-1]))
+    res = int(1e9)
+    for j in range(1,i+1):
+        temp = l[i-1] * c[j-1]
+        if res > temp:
+            res = temp
+    dp[i] = dp[i-1] + res
 
 print(dp[-1])
