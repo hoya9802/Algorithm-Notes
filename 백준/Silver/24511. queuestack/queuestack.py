@@ -9,10 +9,6 @@ data = list(map(int, input().split()))
 m = int(input())
 c = map(int, input().split())
 
-if sum(t) == n:
-    print(*c)
-    quit()
-
 tmp = deque([x for x, check in zip(data, t) if check == 0])
 
 for i in c:
