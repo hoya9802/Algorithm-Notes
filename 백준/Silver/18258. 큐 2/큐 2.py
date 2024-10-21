@@ -5,10 +5,10 @@ input = sys.stdin.readline
 res = deque([])
 n = int(input())
 for i in range(n):
-    cmd = tuple(map(str, input().rsplit()))
+    cmd = input().split()
 
     if cmd[0] == 'push':
-        res.append(int(cmd[-1]))
+        res.append(cmd[-1])
         continue
     if cmd[0] == 'pop':
         if not res:
