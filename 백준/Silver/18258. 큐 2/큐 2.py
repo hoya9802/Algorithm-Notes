@@ -7,7 +7,7 @@ n = int(input())
 for i in range(n):
     cmd = tuple(map(str, input().rsplit()))
 
-    if len(cmd) > 1:
+    if cmd[0] == 'push':
         res.append(int(cmd[-1]))
         continue
     if cmd[0] == 'pop':
