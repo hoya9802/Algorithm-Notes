@@ -1,17 +1,14 @@
 import sys
 input = sys.stdin.readline
 
-res = []
-s = input().rstrip()
+words = input().rstrip()
 bomb = input().rstrip()
-lb = len(bomb)
+l = len(bomb)
 
-for i in s:
+res = []
+for i in words:
     res.append(i)
-    if ''.join(res[len(res)-lb::]) == bomb:
-        for _ in range(lb):
-            res.pop()
-if res:
-    print(*res, sep='')
-else:
-    print("FRULA")
+    if len(res) >= l and ''.join(res[len(res)-l::]) == bomb:
+        del res[len(res)-l::]
+
+print(''.join(res) if res else 'FRULA')
