@@ -1,1 +1,1 @@
-import sys; [print(' '.join(map(str, i))) for i in sorted([list(map(int, sys.stdin.readline().split())) for _ in range(int(sys.stdin.readline()))], key=lambda x: (x[1], x[0]))]
+import sys;input = sys.stdin.readline;[print(' '.join(map(str, i))) for i in sorted([list(map(int, input().split())) for _ in range(int(input()))], key=lambda x: (x[1], x[0]))]
