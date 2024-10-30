@@ -1,14 +1,12 @@
-import sys
-input = sys.stdin.readline
+n = int(input()); line = 1
 
-n = int(input())
-line = 1
 while n > line:
     n -= line
     line += 1
+
 if line % 2 == 0:
-    m = line - (n-1); b = n
-if line % 2 != 0:
-    m =n; b = line - (n-1)
+    b = n; m = line + 1 - n
+elif line % 2 != 0:
+    b = line + 1 -n; m = n
 
 print(f'{b}/{m}')
