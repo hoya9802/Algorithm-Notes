@@ -15,9 +15,4 @@ tmp = sub_lst[0]
 for i in sub_lst:
     tmp = gcd(i, tmp)
 
-res = 0
-for i in sub_lst:
-    d = (i // tmp - 1)
-    res += d
-
-print(res)
+print((lst[-1] - lst[0]) // tmp - n + 1)
