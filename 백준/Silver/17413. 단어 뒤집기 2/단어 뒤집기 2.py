@@ -1,31 +1,28 @@
 import sys
-arr = [i for i in sys.stdin.readline().rstrip()]
 
-res = []
-temp = []; flag = False
+arr = sys.stdin.readline().rstrip()
+res, temp = [], []
+flag = False
+
 for s in arr:
     if s == '<':
+        if temp:
+            res.append(''.join(temp[::-1]))
+            temp.clear()
         flag = True
-        temp.reverse()
-        res.append(''.join(temp))
-        temp = []
         temp.append(s)
-        continue
-    if s == ' ':
-        if not flag:
-            temp.reverse()
-            res.append(''.join(temp)+' ')
-            temp = []
-            continue
-    if s == '>':
-        temp.append(s)
-        res.append(''.join(temp))
-        temp = []
+    elif s == '>':
         flag = False
-        continue
-    temp.append(s)
+        temp.append(s)
+        res.append(''.join(temp))
+        temp.clear()
+    elif s == ' ' and not flag:
+        res.append(''.join(temp[::-1]) + ' ')
+        temp.clear()
+    else:
+        temp.append(s)
 
 if temp:
-    temp.reverse()
-    res.append(''.join(temp))
+    res.append(''.join(temp[::-1]))
+
 print(''.join(res))
