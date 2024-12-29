@@ -1,16 +1,13 @@
 import sys
 input = sys.stdin.readline
 
-def pm(x, n):
-    total = 1
-    for i in range(x, x-n, -1):
-        total *= i
-    return total
-
-def cb(n, r):
-    return pm(n,r) // pm(r,r)
+def cb(x, y):
+    res = x
+    for i in range(y-1):
+        res *= (x-(i+1))
+    return res
 
 for _ in range(int(input())):
-    n, m = map(int, input().split())
-
-    print(cb(m,n))
+    a, b = map(int, input().split())
+    ans = cb(b,a) // cb(a, a)
+    print(ans)
