@@ -1,12 +1,20 @@
-n = int(input()); line = 1
+import sys
+input = sys.stdin.readline
 
-while n > line:
-    n -= line
-    line += 1
+def line_checker(n):
+    if n % 2 == 0:
+        return True
+    return False
 
-if line % 2 == 0:
-    b = n; m = line + 1 - n
-elif line % 2 != 0:
-    b = line + 1 -n; m = n
+n = int(input())
 
-print(f'{b}/{m}')
+
+s =  1; l = 1
+while n > s:
+    l += 1; s += l
+
+checker = line_checker(l)
+if checker:
+    print(f'{l-(s-n)}/{(s-n)+1}')
+else:
+    print(f'{(s-n)+1}/{l-(s-n)}')
