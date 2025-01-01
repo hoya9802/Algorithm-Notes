@@ -1,8 +1,10 @@
 import sys
 input = sys.stdin.readline
 
+n = int(input())
+
 lst = set()
-for _ in range(int(input())):
+for _ in range(n):
     lst.add(input().rstrip())
-for i in sorted(lst, key=lambda x: (len(x), x)):
-    print(i)
+
+print('\n'.join(sorted(lst, key=lambda x: (len(x), x))))
