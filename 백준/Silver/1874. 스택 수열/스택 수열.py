@@ -1,23 +1,18 @@
 import sys
 input = sys.stdin.readline
 
-cmd = []; stack = []; check = True
-now = 1
-for _ in range(int(input())):
-    n = int(input())
-    while now <= n:
-        cmd.append('+')
-        stack.append(now)
-        now += 1
-    if n == stack[-1]:
-        cmd.append('-')
-        stack.pop()
-    else:
-        check = False
-        break
+n = int(input())
 
-if check:
-    for c in cmd:
-        print(c)
-else:
-    print('NO')
+lst = [ int(input()) for _ in range(n)]
+res = []
+
+target = 0; stack = []
+for i in range(n):
+    stack.append(i+1)
+    res.append('+')
+    while target < len(lst) and stack and lst[target] == stack[-1]:
+        stack.pop()
+        res.append('-')
+        target += 1
+
+print('\n'.join(res) if not stack else 'NO')
