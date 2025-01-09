@@ -3,14 +3,14 @@ input = sys.stdin.readline
 
 n = int(input())
 
-lst = [ int(input()) for _ in range(n)]
+arr = [int(input()) for _ in range(n)]
 res = []
 
 target = 0; stack = []
 for i in range(n):
     stack.append(i+1)
     res.append('+')
-    while target < len(lst) and stack and lst[target] == stack[-1]:
+    while target < len(arr) and stack and arr[target] == stack[-1]:
         stack.pop()
         res.append('-')
         target += 1
