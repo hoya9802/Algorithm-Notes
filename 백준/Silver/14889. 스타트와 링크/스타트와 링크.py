@@ -1,29 +1,35 @@
 import sys
 input = sys.stdin.readline
 
-N = int(input())
-graph = [list(map(int, input().split())) for _ in range(N)]
+n = int(input())
 
-def cal(x, y):
-    x_val, y_val = 0, 0
-    for i in range(len(x)):
-        for j in range(i+1,len(x)):
-            x_val += (graph[x[i]][x[j]] + graph[x[j]][x[i]])
-            y_val += (graph[y[i]][y[j]] + graph[y[j]][y[i]])
-    return abs(x_val - y_val)
+arr = [list(map(int, input().split())) for _ in range(n)]
 
-ans = int(1e9)
-def dfs(n, a_list, b_list):
-    global ans
-    if len(a_list) > N//2 or len(b_list) > N//2:
+def cal(lst):
+    temp = 0
+    for i in lst:
+        for j in lst:
+            if i == j:
+                continue
+            temp += arr[i][j]
+    return temp
+
+def dfs(lst, a):
+    global res
+    if a >= n:
         return
-    if n == N:
-        if len(a_list) == len(b_list):
-            ans = min(ans, cal(a_list, b_list))
+    if len(lst) == n // 2:
+        t1 = cal(lst)
+        t2 = cal([x for x in range(n) if x not in lst])
+        tmp = abs(t1-t2)
+        if tmp < res:
+            res = tmp
         return
-    
-    dfs(n+1, a_list+[n], b_list)
-    dfs(n+1, a_list, b_list+[n])
 
-dfs(0, [], [])
-print(ans)
+    dfs(lst+[a], a+1)
+    dfs(lst, a+1)
+
+res = int(1e9)
+dfs([], 0)
+
+print(res)
