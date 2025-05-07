@@ -1,14 +1,15 @@
 import sys
+
 input = sys.stdin.readline
 
-n = int(input())
-bds = [int(input()) for _ in range(n)]
+bds = [int(input()) for _ in range(int(input()))]
 
-res = 0; stack = []
-for cur in bds:
-    while stack and stack[-1] <= cur:
+stack = []; res = 0
+
+for c in bds:
+    while stack and stack[-1] <= c:
         stack.pop()
-    stack.append(cur)
-    res += len(stack)-1
+    stack.append(c)
+    res += len(stack) - 1
 
 print(res)
