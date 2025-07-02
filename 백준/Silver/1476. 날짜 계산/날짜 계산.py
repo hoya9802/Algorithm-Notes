@@ -1,7 +1,7 @@
 import sys
 input = sys.stdin.readline
 
-e, s, m = input().split()
+e, s, m = map(int, input().split())
 x, y, z = 0, 0, 0
 year = 0
 
@@ -15,6 +15,6 @@ while 1:
     if z > 19:
         z = 1
     
-    if (int(e), int(s), int(m)) == (x, y, z):
+    if (e, s, m) == (x, y, z):
         print(year)
         break
