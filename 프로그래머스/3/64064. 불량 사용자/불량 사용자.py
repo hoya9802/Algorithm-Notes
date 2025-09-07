@@ -1,8 +1,6 @@
 def checker(user_id, banned_ids, banned_visited):
     for bi in range(len(banned_ids)):
-        if banned_visited[bi] == 1:
-            continue
-        if len(user_id) != len(banned_ids[bi]):
+        if banned_visited[bi] == 1 or len(user_id) != len(banned_ids[bi]):
             continue
         else:
             for u, b in zip(user_id, banned_ids[bi]):
