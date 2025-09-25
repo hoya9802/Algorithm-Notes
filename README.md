@@ -10,6 +10,7 @@
 ### DYNAMIC PROGRAMMING
 * [fibo(bottomup)](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/DynamicProgramming/fibo_bottomtop.py)
 * [fibo(topdown)](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/DynamicProgramming/fibo_topdown.py)
+* [kadane's algorithm](https://github.com/hoya9802/Algorithm-Notes/blob/main/Algorithm/DynamicProgramming/kadane's%20algorithm.py)
 ### GREEDY
 * [Until 1](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Greedy/until_1.py)
 ### SORT
