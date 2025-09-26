@@ -10,12 +10,14 @@ def solution(n, times):
         for t in times:
             p += mid // t
             
-        if p < n:
-            binary_search(mid+1, e)
+            if p >= n:
+                if res > mid:
+                    res = mid
+                binary_search(s, mid-1)
+                break
+                
         else:
-            if res > mid:
-                res = mid
-            binary_search(s, mid-1)
+            binary_search(mid+1, e)
     
     binary_search(0, res)
     
