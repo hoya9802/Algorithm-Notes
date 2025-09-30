@@ -1,13 +1,13 @@
 def solution(A, B):
-    n = len(A)
+    l = len(A)
     A.sort(reverse=True)
     B.sort(reverse=True)
-    ans = 0
-    i, j = 0, 0
-    while i < n and j < n:
-        if A[i] < B[j]:
-            ans += 1
-            i += 1; j += 1
+    res = 0
+    p1, p2 = 0, 0
+    while p1 < l and p2 < l:
+        if A[p1] < B[p2]:
+            p1 += 1; p2 += 1
+            res += 1
         else:
-            i += 1
-    return ans
+            p1 += 1
+    return res
