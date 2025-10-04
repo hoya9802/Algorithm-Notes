@@ -1,25 +1,41 @@
 import heapq
 
-def solution(jobs):
-    ans = 0
-    curr_time = 0
-    start_time = -1
-    count = 0
-    q = []
-    
-    while count < len(jobs):
-        for j in jobs:
-            if start_time < j[0] <= curr_time:
-                heapq.heappush(q, (j[-1], j[0]))
-                
-        if q:
-            job = heapq.heappop(q)
-            start_time = curr_time
-            curr_time += job[0]
-            ans += curr_time - job[-1]
-            count += 1
-        else:
-            curr_time += 1
-    
-    return ans//len(jobs)
+class Job():
+    def __init__(self, time=0, cost=0):
+        self.time = time
+        self.cost = cost
         
+    def __lt__(self, other):
+        return self.cost < other.cost
+    
+    def __le__(self, other):
+        return self.cost <= other.cost
+
+def solution(jobs):
+    jobs.sort()
+    
+    next_idx = 1
+    job_queue = [Job(jobs[0][0], jobs[0][1])]
+    now = jobs[0][0]
+    ans = 0
+    
+    while 1:
+        while next_idx < len(jobs) and jobs[next_idx][0] <= now:
+            job = Job(jobs[next_idx][0], jobs[next_idx][1])
+            heapq.heappush(job_queue, job)
+            next_idx += 1
+        
+        if len(job_queue) == 0:
+            if next_idx < len(jobs):
+                job = Job(jobs[next_idx][0], jobs[next_idx][1])
+                heapq.heappush(job_queue, job)
+                now = job.time
+                next_idx += 1
+            else:
+                break
+                
+        next_job = heapq.heappop(job_queue)
+        now += next_job.cost
+        ans += (now - next_job.time)
+    
+    return ans // len(jobs)
