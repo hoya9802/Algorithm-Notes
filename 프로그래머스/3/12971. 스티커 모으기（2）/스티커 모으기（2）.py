@@ -4,11 +4,10 @@ def solution(sticker):
     
     for i in range(n):
         if i == 0:
-            dp1[i] = sticker[i]
-            dp2[i] = 0
+            dp1[0] = sticker[0]
             continue
-        dp1[i] = max(dp1[i-2]+sticker[i], dp1[i-1])
-        dp2[i] = max(dp2[i-2]+sticker[i], dp2[i-1])
+        dp1[i] = max(dp1[i-1], dp1[i-2]+sticker[i])
+        dp2[i] = max(dp2[i-1], dp2[i-2]+sticker[i])
     
     if n == 1:
         return dp1[0]
