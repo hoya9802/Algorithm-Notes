@@ -1,21 +1,24 @@
-def matches(user, ban):
-    if len(user) != len(ban):
+def checker(uid, bid):
+    if len(uid) != len(bid):
         return False
-    for u, b in zip(user, ban):
-        if b != '*' and u != b:
+    for u, b in zip(uid, bid):
+        if b != "*" and u != b:
             return False
-    return True
+    else:
+        return True
 
 def solution(user_id, banned_id):
     ans = set()
-
-    def dfs(idx, chosen):
+    
+    def dfs(idx, v):
         if idx == len(banned_id):
-            ans.add(frozenset(chosen))
+            ans.add(frozenset(v))
             return
-        for u in user_id:
-            if u not in chosen and matches(u, banned_id[idx]):
-                dfs(idx + 1, chosen + [u])
-
+        
+        for i in range(len(user_id)):
+            if user_id[i] not in v and checker(user_id[i], banned_id[idx]):
+                dfs(idx+1, v+[user_id[i]])
+    
     dfs(0, [])
+    
     return len(ans)
