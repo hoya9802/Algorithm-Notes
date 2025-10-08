@@ -24,9 +24,7 @@ def solution(n, costs):
         if find(parent, a) != find(parent, b):
             union(a, b)
             ans += c
-        else:
-            continue
-    
+
     return ans
             
         
