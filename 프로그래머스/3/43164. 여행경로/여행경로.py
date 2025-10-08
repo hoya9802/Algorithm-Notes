@@ -1,33 +1,28 @@
 def solution(tickets):
-    tick_dict = {}
-    for s, e in tickets:
-        if s not in tick_dict:
-            tick_dict[s] = {'loc': [], 'visited': []}
-        tick_dict[s]['loc'].append(e)
-        tick_dict[s]['visited'].append(0)
+    l = len(tickets)+1
+    ticket_dict = {}
+    for t in tickets:
+        if t[0] not in ticket_dict:
+            ticket_dict.update({t[0]:[t[1]]})
+            continue
+        ticket_dict[t[0]].append(t[1])
+        
+    for t in tickets:
+        ticket_dict[t[0]].sort()
 
-    # 목적지 정렬 (사전순 우선 탐색 보장)
-    for s in tick_dict:
-        locs = tick_dict[s]['loc']
-        visits = tick_dict[s]['visited']
-        zipped = sorted(zip(locs, visits))
-        tick_dict[s]['loc'], tick_dict[s]['visited'] = map(list, zip(*zipped))
+    ans = []
+    def dfs(v, lst):
+        if len(lst) == l:
+            ans.append(lst)
+            return
+        
+        if v not in ticket_dict:
+            return
+        
+        for idx, i in enumerate(ticket_dict[v]):
+            ticket_dict[v].pop(idx)
+            dfs(i, lst+[i])
+            ticket_dict[v].insert(idx, i)
 
-    res = []
-
-    def dfs(s, arr):
-        if len(arr) == len(tickets) + 1:
-            res.append(arr)
-            return    
-
-        for idx, e in enumerate(tick_dict.get(s, {'loc': []})['loc']):
-            if tick_dict[s]['visited'][idx] == 1:
-                continue
-            tick_dict[s]['visited'][idx] = 1
-            dfs(e, arr + [e])
-            tick_dict[s]['visited'][idx] = 0
-
-    dfs("ICN", ["ICN"])
-
-    res.sort()
-    return res[0]
+    dfs('ICN', ['ICN'])
+    return ans[0]
