@@ -1,34 +1,32 @@
 from collections import deque
-def find_parent(parent, x):
-    if parent[x] != x:
-        parent[x] = find_parent(parent, parent[x])
-    return parent[x]
-
-def union_parent(parent, a, b):
-    a = find_parent(parent, a)
-    b = find_parent(parent, b)
-    if a < b:
-        parent[b] = a
-    else:
-        parent[a] = b
-
 
 def solution(n, costs):
-    graph = [[] for _ in range(n)]
-    parent = [x for x in range(n)]
-    res = 0
-    for cost in costs:
-        a, b, c = cost
-        graph[a].append(b)
-        
+    parent = [i for i in range(n)]
     costs.sort(key=lambda x: x[-1])
-    costs = deque(costs)
+    q = deque(costs)
     
-    while costs:
-        a, b, c = costs.popleft()
-        if find_parent(parent, a) == find_parent(parent, b):
+    def find(parent, a):
+        if parent[a] != a:
+            parent[a] = find(parent, parent[a])
+        return parent[a]
+
+    def union(a, b):
+        a = find(parent, a)
+        b = find(parent, b)
+        if a < b:
+            parent[b] = a
+        else:
+            parent[a] = b
+    
+    ans = 0
+    while q:
+        a, b, c = q.popleft()
+        if find(parent, a) != find(parent, b):
+            union(a, b)
+            ans += c
+        else:
             continue
-        union_parent(parent, a, b)
-        res += c
+    
+    return ans
+            
         
-    return res
