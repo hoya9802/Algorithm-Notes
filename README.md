@@ -35,6 +35,10 @@
 * [cycle_discriminator(using improved disjoint sets)](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/GraphTheory/cycle_discriminator.py)
 * [kruskal](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/GraphTheory/kruskal.py)
 * [topology](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/GraphTheory/topology.py)
+### TREE TRAVERSAL
+* [pre-order](https://github.com/hoya9802/Algorithm-Notes/blob/main/Algorithm/TreeTraversal/preorder.py)
+* [in-order](https://github.com/hoya9802/Algorithm-Notes/blob/main/Algorithm/TreeTraversal/inorder.py)
+* [post-order](https://github.com/hoya9802/Algorithm-Notes/blob/main/Algorithm/TreeTraversal/postorder.py)
 ### Other Syntex
 * [remove_all](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/Algorithm/Other_syntax/remove_all.py)
 * [list rotation](https://github.com/hoya9802/Python-Algorithm-Programming-Notes/blob/main/AlgorithmC/Other_syntax/rotated_matrix.py)
