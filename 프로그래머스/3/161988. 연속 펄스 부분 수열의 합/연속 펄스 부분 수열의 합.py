@@ -1,18 +1,18 @@
-def kadane(arr):
-    n = len(arr)
+def kadane(lst):
     dp = [0]
-    dp[0] = arr[0]
-    ans = arr[0]
-    
-    for i in range(1, n):
-        dp[0] = max(arr[i], dp[0]+arr[i])
-        ans = max(ans, dp[0])
-    
+    ans = 0
+    for i in range(len(lst)):
+        if i == 0:
+            dp[0] = lst[0]
+        else:
+            dp[0] = max(dp[0]+lst[i], lst[i])
+        if dp[0] > ans:
+            ans = dp[0]
     return ans
 
 def solution(sequence):
-    n = len(sequence)
-    arr1 = [sequence[i]*-1 if i%2==0 else sequence[i]*1 for i in range(n)]
-    arr2 = [sequence[i]*1 if i%2==0 else sequence[i]*-1 for i in range(n)]
+    dp1 = [1*sequence[i] if i%2==0 else -1*sequence[i] for i in range(len(sequence))]
+    dp2 = [-1*sequence[i] if i%2==0 else 1*sequence[i] for i in range(len(sequence))]
     
-    return max(kadane(arr1), kadane(arr2))
+    return max(kadane(dp1), kadane(dp2))
+    
