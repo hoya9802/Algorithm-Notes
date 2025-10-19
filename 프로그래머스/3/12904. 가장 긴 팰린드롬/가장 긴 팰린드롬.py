@@ -6,5 +6,3 @@ def solution(s):
             if tmp == tmp[::-1]:
                 res = max(res, len(tmp))
     return res
-            
-                
