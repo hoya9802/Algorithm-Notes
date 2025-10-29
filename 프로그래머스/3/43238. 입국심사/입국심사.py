@@ -1,27 +1,25 @@
-def checker(n, times, time):
-    total = 0
-    
+def checker(time, n, times):
+    tmp = 0
     for t in times:
-        total += (time//t)
-        if total >= n:
+        tmp += time//t
+        if tmp >= n:
             return True
     return False
 
 def solution(n, times):
-    min_time = min(times) * n
+    ans = min(times) * n
     
     def binary_search(s, e):
-        nonlocal min_time
         if s > e:
             return
+        nonlocal ans
         mid = (s+e)//2
-        
-        if checker(n, times, mid):
-            min_time = mid
+        if checker(mid, n, times):
+            ans = mid
             binary_search(s, mid-1)
         else:
             binary_search(mid+1, e)
     
-    binary_search(1, min_time)
+    binary_search(0, ans)
     
-    return min_time
+    return ans
