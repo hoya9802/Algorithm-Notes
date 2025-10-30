@@ -1,29 +1,25 @@
 class Node:
     def __init__(self, parent):
-        self.total = 0
+        self.value = 0
         self.parent = parent
-
-    def divide(self, earn_money):
+        
+    def divider(self, earn_money):
         tmp = int(earn_money * 0.1)
         if tmp > 0 and self.parent != None:
-            self.parent.divide(tmp)
-        self.total += (earn_money-tmp)
-        
+            self.parent.divider(tmp)
+        self.value += (earn_money - tmp)
 
 def solution(enroll, referral, seller, amount):
-    
     tree = {}
-    tree['-'] = None
+    n = len(enroll)
+    for i in range(n):
+        if referral[i] == '-':
+            tree[enroll[i]] = Node(None)
+        else:
+            tree[enroll[i]] = Node(tree[referral[i]])
     
-    for e, r in zip(enroll, referral):
-        if r == "-":
-            tree[e] = Node(tree['-'])
-            continue
-        tree[e] = Node(tree[r])
+    for i in range(len(seller)):
+        earn_money = amount[i] * 100
+        tree[seller[i]].divider(earn_money)
     
-    for s, a in zip(seller, amount):
-        earn_money = a * 100
-        tree[s].divide(earn_money)
-    
-    return [tree[x].total for x in enroll]
-    
+    return [tree[x].value for x in enroll]
