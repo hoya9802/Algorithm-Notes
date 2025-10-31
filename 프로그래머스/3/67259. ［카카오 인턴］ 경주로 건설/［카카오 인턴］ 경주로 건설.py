@@ -8,11 +8,10 @@ def solution(board):
     visited = [[[INF]*4 for _ in range(n)] for _ in range(n)]
     q = deque([])
     
-
     for d in range(4):
         visited[0][0][d] = 0
-        q.append((0, 0, d, 0))  # (x, y, dir, cost)
-    
+        q.append((0, 0, d, 0))
+
     res = INF
     while q:
         x, y, d, cost = q.popleft()
@@ -23,12 +22,11 @@ def solution(board):
         
         for nd, (mx, my) in enumerate(movement):
             nx, ny = x + mx, y + my
-            if 0 <= nx < n and 0 <= ny < n and board[nx][ny] == 0:
-                # 방향 유지 = 100, 회전 = 600
+            if 0 <= nx < n and 0 <= ny < n and not board[nx][ny]:
                 new_cost = cost + (100 if d == nd else 600)
                 
                 if visited[nx][ny][nd] > new_cost:
                     visited[nx][ny][nd] = new_cost
                     q.append((nx, ny, nd, new_cost))
-    
+
     return res
