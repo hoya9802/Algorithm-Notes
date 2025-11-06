@@ -1,11 +1,13 @@
 def solution(n, s):
-    if n > s:
+    if s//n == 0:
         return [-1]
-    ll = s // n; lf = s % n
-    res = [ll] * n
-    idx = n-1
-    while lf:
-        res[idx] += 1
-        lf -= 1; idx -= 1
+    res = [s//n] * n
     
+    count = int(s%n)
+    for i in range(len(res)-1,-1,-1):
+        if not count:
+            break
+        res[i] += 1
+        count -= 1
+        
     return res
